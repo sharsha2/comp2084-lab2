@@ -28,7 +28,7 @@ namespace LAb2.Controllers
             return View();
         }
 
-        public IActionResult CategoriesController()
+        public IActionResult About()
         {
             return View();
         }

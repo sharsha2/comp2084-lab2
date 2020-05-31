@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "Choose your own Categories!";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Choose what you deserve?</h1>
+
+<ul>
+ <li>
+    <a asp-controller="Categories" asp-action="Details" asp-route-desire="Food">Food</a>
+ </li>
+ <li>
+     <a asp-controller="Categories" asp-action="Details" asp-route-desire="tech">Tech</a>
+ </li>
+ <li>
+     <a asp-controller="Categories" asp-action="Details" asp-route-desire="sport">Sports</a>
+ </li>
+</ul>
+
