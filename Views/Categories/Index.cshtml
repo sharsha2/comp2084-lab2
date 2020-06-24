@@ -1,20 +1,36 @@
-﻿
+﻿@model IEnumerable<LAb2.Models.Category>
+
 @{
-    ViewData["Title"] = "Choose your own Categories!";
+    ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Choose what you deserve?</h1>
+<h1>Index</h1>
 
-<ul>
- <li>
-    <a asp-controller="Categories" asp-action="Details" asp-route-desire="Food">Food</a>
- </li>
- <li>
-     <a asp-controller="Categories" asp-action="Details" asp-route-desire="tech">Tech</a>
- </li>
- <li>
-     <a asp-controller="Categories" asp-action="Details" asp-route-desire="sport">Sports</a>
- </li>
-</ul>
-
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CategoryId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
